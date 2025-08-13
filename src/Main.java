@@ -19,8 +19,13 @@ public class Main extends JFrame {
       public void paint(Graphics g) {
 	g.setColor(java.awt.Color.BLACK);
 	g.drawRect(10, 10, 700, 700);
+  /* 
+  for (int i = 0; i < )
+  g.drawLine(int x1, int y1, int x2, int y2)
+  */
       }
     }
+    
 
     private Main() {
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
