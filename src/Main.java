@@ -17,12 +17,16 @@ public class Main extends JFrame {
 
       @Override
       public void paint(Graphics g) {
-	g.setColor(java.awt.Color.BLACK);
-	g.drawRect(10, 10, 700, 700);
-  /* 
-  for (int i = 0; i < )
-  g.drawLine(int x1, int y1, int x2, int y2)
-  */
+        g.setColor(java.awt.Color.BLACK);
+        g.drawRect(10, 10, 700, 700);
+        g.drawRect(10, 10, 700, 700);
+        //int startX = 10;
+        //int startY = 10;
+        
+        for (int i = 0; i <= 700/35; i++){
+          g.drawLine(10 + 35*i, 10, 10 + 35*i, 710);
+          g.drawLine(10, 10 + 35*i, 710,  + 10+35*i);
+        } 
       }
     }
     
