@@ -19,5 +19,5 @@
             g.drawRect(cellX, cellY, cellSize, cellSize);
             g.fillRect(cellX, cellY, cellSize, cellSize);
         }
-
+        
     }
