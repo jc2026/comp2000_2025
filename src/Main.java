@@ -5,29 +5,22 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Main extends JFrame {
+    Grid grid;
     public static void main(String[] args) throws Exception {
       Main window = new Main();
       window.run();
     }
 
     class Canvas extends JPanel {
-      public Canvas() {
-        setPreferredSize(new Dimension(720, 720));
-      }
+        public Canvas() {
+            setPreferredSize(new Dimension(720, 720));
+            grid = new Grid();
+        }
 
-      @Override
-      public void paint(Graphics g) {
-        g.setColor(java.awt.Color.BLACK);
-        g.drawRect(10, 10, 700, 700);
-        g.drawRect(10, 10, 700, 700);
-        //int startX = 10;
-        //int startY = 10;
-        
-        for (int i = 0; i <= 700/35; i++){
-          g.drawLine(10 + 35*i, 10, 10 + 35*i, 710);
-          g.drawLine(10, 10 + 35*i, 710,  + 10+35*i);
-        } 
-      }
+        @Override
+        public void paint(Graphics g) {
+            grid.paint(g); 
+        }
     }
     
 

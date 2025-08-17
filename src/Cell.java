@@ -1,23 +1,22 @@
-    import java.awt.Dimension;
-    import java.awt.Graphics;
+import java.awt.*;
 
-    import javax.swing.JFrame;
-    import javax.swing.JPanel;
+class Cell {
+    //fields
+    int x;
+    int y;
 
-    public class Cell {
-        int cellSize;
-        int cellX;
-        int cellY;
-
-        public Cell (int s, int x, int y){
-            this.cellSize = s;
-            this.cellX = x;
-            this.cellY = y;
-        }
-
-        public void paint(Graphics g){
-            g.drawRect(cellX, cellY, cellSize, cellSize);
-            g.fillRect(cellX, cellY, cellSize, cellSize);
-        }
-        
+    //constructor
+    public Cell(int x, int y){
+        this.x = x; 
+        this.y = y;
     }
+
+    //methods
+    void paint (Graphics g){
+        g.setColor(Color.WHITE);
+        g.fillRect(x,y,35,35);
+        g.setColor(Color.BLACK);
+        g.drawRect(x,y,35,35);
+    }
+    
+}

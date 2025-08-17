@@ -1,36 +1,25 @@
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+public class Grid {
+    //fields
+    Cell[][] cells = new Cell[20][20];
 
-public class Grid extends JPanel{
-    int rows;
-    int cols;
-    int cellSize;
-    Cell[][] cells;
-
-    public Grid (int s, int r, int c){
-        this.cellSize = s;
-        this.rows = r;
-        this.cols = c;
-        this.cells = new Cell[r][c];
-        for (int i = 0; i < rows; i++){
-            for (int j = 0; j < cols; j++){
-                cells[i][j] = new Cell (cellSize,j*cellSize,i*cellSize);
+    //constructors
+    public Grid (){
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++){
+                cells[i][j] = new Cell(10+35*i, 10+35*j);
             }
         }
     }
 
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        for (int i = 0; i < rows; i++){
-            for (int j = 0; j < cols; j++){
+    //methods
+    public void paint(Graphics g){
+      for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++){
+                //make cell paint itself
                 cells[i][j].paint(g);
             }
         }
     }
-
 }
-
-
