@@ -2,22 +2,23 @@ import java.awt.*;
 
 public class Animal {
     //Fields
-    int x; //row
-    int y; //col
+    int row; //row
+    int col; //col
     static int size = 35;
+    static int offset = 10;
 
 
     public Animal (int x, int y){
-        this.x = x;
-        this.y = y;
+        this.row = (int) Math.ceil((double)y/size);
+        this.col = (int) Math.ceil((double)x/size);
     }
+    
 
     // locate a cell and fill colour
-   public void paint(Graphics g, int x, int y){
-        g.drawRect(x,y,size,size);
+   public void paint(Graphics g){
+        g.drawRect(offset + row*size, offset+col*size, size, size);
         g.setColor(Color.RED);
-        g.fillRect(x, y, size, size);
-        
+        g.fillRect(offset + row*size, offset+col*size, size, size);
     } 
 
 }
