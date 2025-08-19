@@ -12,6 +12,8 @@ public class Main extends JFrame {
 
     class Canvas extends JPanel {
       Grid grid = new Grid();
+      Animal animal = new Animal(50, 50);
+      Animal animal2 = new Animal(30, 90);
       public Canvas() {
         setPreferredSize(new Dimension(720, 720));
       }
@@ -19,6 +21,8 @@ public class Main extends JFrame {
       @Override
       public void paint(Graphics g) {
         grid.paint(g, getMousePosition());
+        animal.paint(g, animal.x, animal.y); 
+        animal2.paint(g, animal2.x, animal2.y); 
       }
     }
 

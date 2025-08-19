@@ -7,6 +7,8 @@ public class Cell {
   int x;
   int y;
   static int size = 35;
+  Animal animals;
+
 
   // constructors
   public Cell(int inX, int inY) {
@@ -33,4 +35,6 @@ public class Cell {
       return false;
     }
   }
+  
+  
 }
